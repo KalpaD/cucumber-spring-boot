@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(format = {
         "json:target/cucumber/account_service.json",
         "html:target/cucumber/account_service.html",
+        "usage:target/cucumber/account_service-usage.json","junit:target/cucumber/account_service-results.xml",
         "pretty"
 }, tags = {"~@ignored"}, features = "src/test/resources/org.kds.cucumbertest")
 public class CucumberTest {

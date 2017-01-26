@@ -1,5 +1,7 @@
 package org.kds.cucumbertest.dto;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.NoArgsConstructor;
 
 /**
@@ -13,6 +15,7 @@ public class Account {
     private double accountBalance;
     private String bsb;
     private String accountHolderName;
+    private  ObjectMapper objectMapper = new ObjectMapper();
 
     public Account(String accountNumber, double accountBalance, String bsb, String accountHolderName) {
         this.accountNumber = accountNumber;
@@ -52,4 +55,6 @@ public class Account {
     public void setAccountHolderName(String accountHolderName) {
         this.accountHolderName = accountHolderName;
     }
+
+
 }

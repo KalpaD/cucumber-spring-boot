@@ -5,9 +5,14 @@ Feature: Account services
     Then the response code should be <code>
     And the response content type should be <contentType>
     And body should not be empty
-    And response should have <key> and <value>
+    And response should contain following
+      | accountNumber       | 123455     |
+      | accountBalance      | 56789.0    |
+      | bsb                 | 6754       |
+      | accountHolderName   | Job Villes |
+    And response should contain following headers
+      |ResponseVersion     | 1.0     |
 
     Examples:
-      | uri                                                |code|contentType     | key           | value |
-      | http://localhost:8080/account?accountNumber=123455 |200 |application/json| accountNumber | 123455|
-
+      | uri                                                |code|contentType     |
+      | http://localhost:8080/account?accountNumber=123455 |200 |application/json|
